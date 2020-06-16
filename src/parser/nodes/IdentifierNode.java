@@ -1,18 +1,21 @@
 package parser.nodes;
 
-import parser.nodes.state.NodeState;
-import test.Expr;
-import test.NodeVisitor;
+import interpreter.ASTVisitor;
 
-public class IdentifierNode extends ASTNode {
+public class IdentifierNode extends ExpressionNode {
 
-    public IdentifierNode(String value) {
-        this.value = value;
+    private String identifier;
+
+    public IdentifierNode(String identifier) {
+        this.identifier = identifier;
     }
 
+    public String getIdentifier() {
+        return identifier;
+    }
 
     @Override
-    public Expr visit(NodeVisitor visitor) {
-        return visitor.execute(this);
+    public void accept(ASTVisitor visitor) {
+        visitor.visit(this);
     }
 }

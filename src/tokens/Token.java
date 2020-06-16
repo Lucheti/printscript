@@ -1,37 +1,54 @@
 package tokens;
 
+import parser.IParserVisitor;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class Token implements VisitableToken {
-    final Pattern pattern;
-    final String value;
+
+    private Pattern pattern;
+    private String lexeme;
+    private Integer line;
+    private Integer column;
 
     Token(Pattern pattern) {
         this.pattern = pattern;
-        this.value = null;
+        this.lexeme = null;
     }
 
-    Token(Pattern pattern, String value) {
+    Token(Pattern pattern, String lexeme) {
         this.pattern = pattern;
-        this.value = value;
+        this.lexeme = lexeme;
     }
 
     public Matcher getMatcher(String string){
         return pattern.matcher(string);
     }
 
-    public String getValue() {
-        return value;
-    }
-
     public abstract Token withValue(String value);
 
-    @Override
-    public String toString() {
-        return "Token{" +
-                "pattern=" + pattern +
-                ", value='" + value + '\'' +
-                '}';
+    public Integer getLine() {
+        return line;
+    }
+
+    public void setLine(Integer line) {
+        this.line = line;
+    }
+
+    public Integer getColumn() {
+        return column;
+    }
+
+    public void setColumn(Integer column) {
+        this.column = column;
+    }
+
+    public String getLexeme() {
+        return lexeme;
+    }
+
+    public void setLexeme(String lexeme) {
+        this.lexeme = lexeme;
     }
 }

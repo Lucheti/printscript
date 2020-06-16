@@ -1,5 +1,7 @@
 package interpreter;
 
+import parser.nodes.*;
+
 public interface ASTVisitor {
     void visit(ProgramNode programNode);
     void visit(AssigmentNode assigmentNode);

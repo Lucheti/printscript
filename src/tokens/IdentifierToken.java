@@ -1,13 +1,14 @@
 package tokens;
 
-import parser.TokenVisitor;
+
+import parser.IParserVisitor;
 
 import java.util.regex.Pattern;
 
 public class IdentifierToken extends Token {
 
     public IdentifierToken() {
-        super(Pattern.compile("[a-zA-Z]+", Pattern.MULTILINE));
+        super(Pattern.compile("[a-zA-Z0-9]+", Pattern.MULTILINE));
     }
 
     public IdentifierToken(String value) {
@@ -20,7 +21,8 @@ public class IdentifierToken extends Token {
     }
 
     @Override
-    public void visit(TokenVisitor tokenVisitor) {
-        tokenVisitor.parseToken(this);
+    public void accept(IParserVisitor visitor) {
+        visitor.visit(this);
     }
+
 }

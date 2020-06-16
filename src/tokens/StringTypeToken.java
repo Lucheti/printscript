@@ -1,6 +1,6 @@
 package tokens;
 
-import parser.TokenVisitor;
+import parser.IParserVisitor;
 
 import java.util.regex.Pattern;
 
@@ -20,7 +20,8 @@ public class StringTypeToken extends Token {
     }
 
     @Override
-    public void visit(TokenVisitor tokenVisitor) {
-        tokenVisitor.parseToken(this);
+    public void accept(IParserVisitor visitor) {
+        visitor.visit(this);
     }
+
 }

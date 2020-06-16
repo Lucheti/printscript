@@ -2,8 +2,7 @@ package interpreter;
 
 import com.sun.corba.se.impl.io.TypeMismatchException;
 import exeptions.IllegalGrammarException;
-import parser.nodes.ASTNode;
-
+import parser.nodes.*;
 
 import java.util.Stack;
 

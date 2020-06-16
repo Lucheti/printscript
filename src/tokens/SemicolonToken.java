@@ -1,25 +1,27 @@
 package tokens;
 
-import parser.TokenVisitor;
+import parser.IParserVisitor;
 
 import java.util.regex.Pattern;
 
-public class EOLToken extends Token{
-    public EOLToken() {
+public class SemicolonToken extends Token {
+
+    public SemicolonToken() {
         super(Pattern.compile(";", Pattern.MULTILINE));
     }
 
-    public EOLToken(String value) {
+    public SemicolonToken(String value) {
         super(Pattern.compile(";", Pattern.MULTILINE), value);
     }
 
     @Override
     public Token withValue(String value) {
-        return new EOLToken(value);
+        return new SemicolonToken(value);
     }
 
     @Override
-    public void visit(TokenVisitor tokenVisitor) {
-        tokenVisitor.parseToken(this);
+    public void accept(IParserVisitor visitor) {
+        visitor.visit(this);
     }
+
 }

@@ -30,11 +30,24 @@ public class DefaultLexer implements ILexer {
 //        tokenizerStack.push(new Tokenizer(Pattern.compile("boolean", Pattern.MULTILINE);
 //        tokenizerStack.push(new Tokenizer(Pattern.compile("[a-zA-Z]+", Pattern.MULTILINE);
 
-        tokenizerStack.push(new Tokenizer(new EOLToken()));
-        tokenizerStack.push(new Tokenizer(new TypeSeparatorToken()));
-        tokenizerStack.push(new Tokenizer(new ConstToken()));
-        tokenizerStack.push(new Tokenizer(new EqualsToken()));
+        //symbols
+        tokenizerStack.push(new Tokenizer(new EOFToken()));
+        tokenizerStack.push(new Tokenizer(new SemicolonToken()));
+        tokenizerStack.push(new Tokenizer(new TypeAssignationToken()));
+        tokenizerStack.push(new Tokenizer(new LetToken()));
         tokenizerStack.push(new Tokenizer(new StringTypeToken()));
+        tokenizerStack.push(new Tokenizer(new NumberTypeToken()));
+        tokenizerStack.push(new Tokenizer(new AssignationToken()));
+        tokenizerStack.push(new Tokenizer(new ClosingParenthesisToken()));
+        tokenizerStack.push(new Tokenizer(new OpenParenthesisToken()));
+        tokenizerStack.push(new Tokenizer(new DivisionToken()));
+        tokenizerStack.push(new Tokenizer(new MinusToken()));
+        tokenizerStack.push(new Tokenizer(new PlusToken()));
+        tokenizerStack.push(new Tokenizer(new MultiplicationToken()));
+        tokenizerStack.push(new Tokenizer(new PrintToken()));
+
+        //values
+        tokenizerStack.push(new Tokenizer(new NumberValueToken()));
         tokenizerStack.push(new Tokenizer(new StringValueToken()));
         tokenizerStack.push(new Tokenizer(new IdentifierToken()));
 
@@ -57,6 +70,7 @@ public class DefaultLexer implements ILexer {
             else currentToken = newToken;
         }
         tokens.add(tokenParser.getToken(sb.toString()));
+        tokens.add(new EOFToken());
         return tokens;
     }
 }

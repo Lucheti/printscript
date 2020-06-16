@@ -1,10 +1,8 @@
 package tokens;
 
-import parser.TokenVisitor;
-import parser.nodes.ASTNode;
 
-import java.util.Iterator;
+import parser.IParserVisitor;
 
 public interface VisitableToken {
-    void visit(TokenVisitor tokenVisitor);
+    void accept(IParserVisitor visitor);
 }
