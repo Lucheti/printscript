@@ -2,10 +2,10 @@ package parser;
 
 import parser.nodes.ASTNode;
 import parser.nodes.ExpressionNode;
-import tokens.ClosingParenthesisToken;
-import tokens.IdentifierToken;
-import tokens.NumberValueToken;
-import tokens.StringValueToken;
+import lexer.tokens.ClosingParenthesisToken;
+import lexer.tokens.IdentifierToken;
+import lexer.tokens.NumberValueToken;
+import lexer.tokens.StringValueToken;
 
 public class OpenParenthesisParserState extends AbstractParserState {
 
@@ -33,11 +33,11 @@ public class OpenParenthesisParserState extends AbstractParserState {
 
     @Override
     public void visit(ClosingParenthesisToken token) {
-        getInput().consume();
+        getTokenProvider().next();
         this.expressionNode = new ExpressionNode();
     }
 
     private void assignExpression() {
-        this.expressionNode = new ExpressionParserState().parse(getInput());
+        this.expressionNode = new ExpressionParserState().parse(getTokenProvider());
     }
 }

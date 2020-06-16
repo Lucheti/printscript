@@ -4,7 +4,7 @@ import parser.nodes.ASTNode;
 import parser.nodes.DeclarationNode;
 import parser.nodes.ExpressionNode;
 import parser.nodes.IdentifierNode;
-import tokens.IdentifierToken;
+import lexer.tokens.IdentifierToken;
 
 
 public class DeclarationParserState extends AbstractParserState {
@@ -18,12 +18,12 @@ public class DeclarationParserState extends AbstractParserState {
 
     @Override
     public void visit(IdentifierToken token) {
-        getInput().consume();
+        getTokenProvider().next();
         TypeAssignationParserState state = new TypeAssignationParserState();
-        ExpressionNode type = (ExpressionNode) state.parse(getInput());
+        ExpressionNode type = (ExpressionNode) state.parse(getTokenProvider());
 
         this.declarationNode = new DeclarationNode(
-                new IdentifierNode(token.getLexeme()),
+                new IdentifierNode(token.getValue()),
                 state.getType(),
                 type);
     }

@@ -1,7 +1,7 @@
 package parser;
 
 import parser.nodes.*;
-import tokens.*;
+import lexer.tokens.*;
 
 public class ProgramParserState extends AbstractParserState {
 
@@ -23,33 +23,33 @@ public class ProgramParserState extends AbstractParserState {
 
     @Override
     public void visit(IdentifierToken token) {
-        getInput().consume();
+        getTokenProvider().next();
 
         programNode.add(
                 new AssigmentNode(
-                        new IdentifierNode(token.getLexeme()),
-                        (ExpressionNode) new AssignationParserState().parse(getInput())));
+                        new IdentifierNode(token.getValue()),
+                        (ExpressionNode) new AssignationParserState().parse(getTokenProvider())));
 
-        getInput().next().accept(this);
+        getTokenProvider().get().accept(this);
     }
 
     @Override
     public void visit(LetToken token) {
-        getInput().consume();
-        programNode.add(new DeclarationParserState().parse(getInput()));
-        getInput().next().accept(this);
+        getTokenProvider().next();
+        programNode.add(new DeclarationParserState().parse(getTokenProvider()));
+        getTokenProvider().get().accept(this);
     }
 
     @Override
     public void visit(PrintToken token) {
-        getInput().consume();
-        programNode.add(new PrintParserState().parse(getInput()));
-        getInput().next().accept(this);
+        getTokenProvider().next();
+        programNode.add(new PrintParserState().parse(getTokenProvider()));
+        getTokenProvider().get().accept(this);
     }
 
     @Override
     public void visit(SemicolonToken token) {
-        getInput().consume();
-        getInput().next().accept(this);
+        getTokenProvider().next();
+        getTokenProvider().get().accept(this);
     }
 }

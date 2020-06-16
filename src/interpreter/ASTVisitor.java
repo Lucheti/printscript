@@ -3,16 +3,19 @@ package interpreter;
 import parser.nodes.*;
 
 public interface ASTVisitor {
-    void visit(ProgramNode programNode);
-    void visit(AssigmentNode assigmentNode);
-    void visit(AdditionNode additionNode);
-    void visit(SubtractionNode subtractionNode);
-    void visit(DivisionNode divisionNode);
-    void visit(MultiplicationNode multiplicationNode);
-    void visit(StringNode value);
-    void visit(IntegerNode value);
-    void visit(IdentifierNode identifierNode);
-    void visit(ExpressionNode expressionNode);
-    void visit(DeclarationNode declarationNode);
-    void visit(PrintNode printNode);
+    void visit(ProgramNode node);
+    void visit(AssigmentNode node);
+    void visit(AdditionNode node);
+    void visit(SubtractionNode node);
+    void visit(DivisionNode node);
+    void visit(MultiplicationNode node);
+    void visit(StringNode node);
+    void visit(IntegerNode node);
+    void visit(IdentifierNode node);
+    void visit(ExpressionNode node);
+    void visit(DeclarationNode node);
+    void visit(PrintNode node);
+    void visit(BooleanNode node);
+    void visit(AndNode node);
+    void visit(OrNode node);
 }

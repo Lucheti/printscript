@@ -1,14 +1,13 @@
-import FileReader.FileReader;
-import FileReader.DefaultFileReader;
-import input.Input;
-import input.TokenInput;
+import common.FileReader.FileReader;
+import common.FileReader.DefaultFileReader;
+import common.provider.Provider;
+import common.provider.TokenProvider;
 import interpreter.Interpreter;
 import interpreter.Terminal;
 import lexer.DefaultLexer;
 import parser.Parser;
 import parser.nodes.ASTNode;
-import tokens.Token;
-import tokens.VisitableToken;
+import lexer.tokens.Token;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class CLI {
 
         FileReader fileReader = new DefaultFileReader();
         List<Token> tokenStream = lexer.lex(fileReader.readFile("resources/FirstTry.ps"));
-        Input input = new TokenInput(tokenStream);
+        Provider input = new TokenProvider(tokenStream);
         ASTNode ast = parser.parse(input);
         interpreter.start(ast);
     }

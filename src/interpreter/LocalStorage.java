@@ -1,5 +1,7 @@
 package interpreter;
 
+import interpreter.value.Value;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,11 +1,12 @@
 package parser;
 
-import exeptions.IllegalGrammarException;
+import common.exeptions.IllegalGrammarException;
+import lexer.tokens.BooleanTypeToken;
 import parser.nodes.ASTNode;
 import parser.nodes.ExpressionNode;
-import tokens.NumberTypeToken;
-import tokens.StringTypeToken;
-import tokens.TypeAssignationToken;
+import lexer.tokens.NumberTypeToken;
+import lexer.tokens.StringTypeToken;
+import lexer.tokens.TypeAssignationToken;
 
 public class TypeAssignationParserState extends AbstractParserState {
 
@@ -24,19 +25,24 @@ public class TypeAssignationParserState extends AbstractParserState {
 
     @Override
     public void visit(TypeAssignationToken token) {
-        getInput().consume();
+        getTokenProvider().next();
         this.hasTypeAssignation = true;
-        getInput().next().accept(this);
+        getTokenProvider().get().accept(this);
     }
 
     @Override
     public void visit(NumberTypeToken token) {
-        this.parseType("Number");
+        this.parseType("number");
     }
 
     @Override
     public void visit(StringTypeToken token) {
-        this.parseType("String");
+        this.parseType("string");
+    }
+
+    @Override
+    public void visit(BooleanTypeToken token) {
+        this.parseType("boolean");
     }
 
     public void parseType(String type) {
@@ -44,9 +50,9 @@ public class TypeAssignationParserState extends AbstractParserState {
             throw new IllegalGrammarException();
         }
 
-        getInput().consume();
+        getTokenProvider().next();
         this.type = type;
-        this.expressionNode = (ExpressionNode) new AssignationParserState().parse(getInput());
+        this.expressionNode = (ExpressionNode) new AssignationParserState().parse(getTokenProvider());
     }
 
     public String getType() {

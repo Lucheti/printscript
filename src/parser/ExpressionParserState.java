@@ -1,8 +1,8 @@
 package parser;
 
-import exeptions.IllegalGrammarException;
+import common.exeptions.IllegalGrammarException;
 import parser.nodes.*;
-import tokens.*;
+import lexer.tokens.*;
 
 public class ExpressionParserState extends AbstractParserState {
 
@@ -21,70 +21,97 @@ public class ExpressionParserState extends AbstractParserState {
     @Override
     public void visit(StringValueToken token) {
         checkStateLiteral();
-        getInput().consume();
-        this.expressionNode = new StringNode(token.getLexeme());
-        getInput().next().accept(this);
-        this.expressionNode.setLeft(new StringNode(token.getLexeme()));
+        getTokenProvider().next();
+        this.expressionNode = new StringNode(token.getValue());
+        getTokenProvider().get().accept(this);
+        this.expressionNode.setLeft(new StringNode(token.getValue()));
     }
 
     @Override
     public void visit(NumberValueToken token) {
         checkStateLiteral();
-        getInput().consume();
-        this.expressionNode = new IntegerNode(Integer.valueOf(token.getLexeme()));
-        getInput().next().accept(this);
-        this.expressionNode.setLeft(new IntegerNode(Integer.valueOf(token.getLexeme())));
+        getTokenProvider().next();
+        this.expressionNode = new IntegerNode(Integer.valueOf(token.getValue()));
+        getTokenProvider().get().accept(this);
+        this.expressionNode.setLeft(new IntegerNode(Integer.valueOf(token.getValue())));
+    }
+
+    @Override
+    public void visit(BooleanValueToken token) {
+        checkStateLiteral();
+        getTokenProvider().next();
+        this.expressionNode = new BooleanNode(Boolean.parseBoolean(token.getValue()));
+        getTokenProvider().get().accept(this);
+        this.expressionNode.setLeft(new BooleanNode(Boolean.parseBoolean(token.getValue())));
     }
 
     @Override
     public void visit(IdentifierToken token) {
         checkStateLiteral();
-        getInput().consume();
-        this.expressionNode = new IdentifierNode(token.getLexeme());
-        getInput().next().accept(this);
-        this.expressionNode.setLeft(new IdentifierNode(token.getLexeme()));
+        getTokenProvider().next();
+        this.expressionNode = new IdentifierNode(token.getValue());
+        getTokenProvider().get().accept(this);
+        this.expressionNode.setLeft(new IdentifierNode(token.getValue()));
     }
 
     @Override
     public void visit(PlusToken token) {
         checkStateNotLiteral();
-        getInput().consume();
+        getTokenProvider().next();
         this.expressionNode = new AdditionNode(
                 null,
-                (ExpressionNode) new ExpressionParserState().parse(getInput()));
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
     }
 
     @Override
     public void visit(MinusToken token) {
         checkStateNotLiteral();
-        getInput().consume();
+        getTokenProvider().next();
         this.expressionNode = new SubtractionNode(
                 null,
-                (ExpressionNode) new ExpressionParserState().parse(getInput()));
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
     }
 
     @Override
     public void visit(MultiplicationToken token) {
         checkStateNotLiteral();
-        getInput().consume();
+        getTokenProvider().next();
         this.expressionNode = new MultiplicationNode(
                 null,
-                (ExpressionNode) new ExpressionParserState().parse(getInput()));
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
     }
 
     @Override
     public void visit(DivisionToken token) {
         checkStateNotLiteral();
-        getInput().consume();
+        getTokenProvider().next();
         this.expressionNode = new DivisionNode(
                 null,
-                (ExpressionNode) new ExpressionParserState().parse(getInput()));
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
+    }
+
+    @Override
+    public void visit(AndToken token) {
+        checkStateNotLiteral();
+        getTokenProvider().next();
+        this.expressionNode = new AndNode(
+                null,
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
+    }
+
+    @Override
+    public void visit(OrToken token) {
+        checkStateNotLiteral();
+        getTokenProvider().next();
+        this.expressionNode = new OrNode(
+                null,
+                (ExpressionNode) new ExpressionParserState().parse(getTokenProvider()));
     }
 
     @Override
     public void visit(ClosingParenthesisToken token) {
         checkStateNotLiteral();
-        getInput().consume();
+        getTokenProvider().next();
     }
 
     @Override

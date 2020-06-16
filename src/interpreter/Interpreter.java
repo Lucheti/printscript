@@ -1,7 +1,11 @@
 package interpreter;
 
 import com.sun.corba.se.impl.io.TypeMismatchException;
-import exeptions.IllegalGrammarException;
+import common.exeptions.IllegalGrammarException;
+import interpreter.value.BooleanValue;
+import interpreter.value.NumberValue;
+import interpreter.value.StringValue;
+import interpreter.value.Value;
 import parser.nodes.*;
 
 import java.util.Stack;
@@ -81,6 +85,16 @@ public class Interpreter implements ASTVisitor {
         operation(multiplicationNode, Value::times);
     }
 
+    @Override
+    public void visit(AndNode andNode) {
+        operation(andNode, Value::and);
+    }
+
+    @Override
+    public void visit(OrNode orNode) {
+        operation(orNode, Value::or);
+    }
+
     public void operation(ExpressionNode node, CallbackOperation operation) {
         node.left().accept(this);
         node.right().accept(this);
@@ -100,6 +114,11 @@ public class Interpreter implements ASTVisitor {
     @Override
     public void visit(IntegerNode value) {
         this.stack.push(new NumberValue(value.getValue()));
+    }
+
+    @Override
+    public void visit(BooleanNode value) {
+        this.stack.push(new BooleanValue(value.getValue()));
     }
 
     @Override

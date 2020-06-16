@@ -1,19 +1,19 @@
 package parser;
 
-import input.Input;
+import common.provider.Provider;
 import parser.nodes.ASTNode;
-import tokens.VisitableToken;
+import lexer.tokens.VisitableToken;
 
-public class Parser implements IParserState {
+public class Parser implements ParserState {
 
-    private IParserState state;
+    private ParserState state;
 
     public Parser() {
         this.state = new ProgramParserState();
     }
 
     @Override
-    public ASTNode parse(Input<VisitableToken> input) {
+    public ASTNode parse(Provider<VisitableToken> input) {
         return this.state.parse(input);
     }
 

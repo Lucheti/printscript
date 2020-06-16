@@ -2,7 +2,7 @@ package parser;
 
 import parser.nodes.ASTNode;
 import parser.nodes.ExpressionNode;
-import tokens.AssignationToken;
+import lexer.tokens.AssignationToken;
 
 public class AssignationParserState extends AbstractParserState {
 
@@ -15,7 +15,7 @@ public class AssignationParserState extends AbstractParserState {
 
     @Override
     public void visit(AssignationToken token) {
-        getInput().consume();
-        this.expressionNode = (ExpressionNode) new ExpressionParserState().parse(getInput());
+        getTokenProvider().next();
+        this.expressionNode = (ExpressionNode) new ExpressionParserState().parse(getTokenProvider());
     }
 }

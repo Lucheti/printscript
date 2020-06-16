@@ -3,7 +3,7 @@ package parser;
 import parser.nodes.ASTNode;
 import parser.nodes.ExpressionNode;
 import parser.nodes.PrintNode;
-import tokens.OpenParenthesisToken;
+import lexer.tokens.OpenParenthesisToken;
 
 public class PrintParserState extends AbstractParserState {
 
@@ -20,7 +20,7 @@ public class PrintParserState extends AbstractParserState {
 
     @Override
     public void visit(OpenParenthesisToken token) {
-        getInput().consume();
-        this.printNode.setExpressionNode((ExpressionNode) new OpenParenthesisParserState().parse(getInput()));
+        getTokenProvider().next();
+        this.printNode.setExpressionNode((ExpressionNode) new OpenParenthesisParserState().parse(getTokenProvider()));
     }
 }
