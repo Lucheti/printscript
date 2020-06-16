@@ -1,6 +1,6 @@
 package tokenParser;
 
-import token.Token;
+import tokens.Token;
 
 public class BaseTokenParser implements TokenParser {
 

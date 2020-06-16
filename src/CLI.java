@@ -1,12 +1,19 @@
 import FileReader.FileReader;
 import FileReader.DefaultFileReader;
+import lexer.DefaultLexer;
+import parser.Parser;
+import parser.nodes.ASTNode;
+import tokens.Token;
+
+import java.util.List;
 
 public class CLI {
     public static void main(String[] args) {
-        String asd = "asdasdas";
+        DefaultLexer lexer = new DefaultLexer();
+        Parser parser = new Parser();
 
-        Lexer lexer = new Lexer();
         FileReader fileReader = new DefaultFileReader();
-        lexer.tokenize(fileReader.readFile("resources/printScript.ps"));
+        List<Token> tokenStream = lexer.lex(fileReader.readFile("resources/FirstTry.ps"));
+        ASTNode ast = parser.parse(tokenStream);
     }
 }

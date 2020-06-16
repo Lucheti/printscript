@@ -1,25 +1,25 @@
 package tokenParser;
-import token.Token;
-
-import java.util.regex.Matcher;
+import tokenizer.ITokenizer;
+import tokenizer.Tokenizer;
+import tokens.Token;
 
 public class TokenParserDecorator implements TokenParser {
 
-    private Token token;
+    private ITokenizer tokenizer;
     private TokenParser decoratedTokenParser;
 
-    public TokenParserDecorator(Token token, TokenParser decoratedTokenParser) {
-        this.token = token;
+    public TokenParserDecorator(Tokenizer tokenizer, TokenParser decoratedTokenParser) {
+        this.tokenizer = tokenizer;
         this.decoratedTokenParser = decoratedTokenParser;
     }
 
 
     @Override
     public Token getToken(String str) {
-        Matcher matcher = token.getPattern().matcher(str);
-        if (matcher.find() && matcher.group(0).equals(str)) {
-            return token.withValue(str);
+        this.tokenizer = tokenizer.change(str);
+        if (tokenizer.isValid()) {
+            return tokenizer.getToken();
         }
-        return decoratedTokenParser.getToken(str);
+        else return decoratedTokenParser.getToken(str);
     }
 }
