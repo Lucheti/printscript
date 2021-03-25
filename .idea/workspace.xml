@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ab02032-78e2-45bd-a85b-2d9933021761" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cli/src/main/java/CLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/FileReader/DefaultFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/FileReader/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/exeptions/IllegalGrammarException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/provider/FileInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/provider/Provider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/provider/StringInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/Console.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/Interpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/LocalStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/Memory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/value/BooleanValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/value/NumberValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/value/StringValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interpreter/src/main/java/interpreter/value/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/DefaultLexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/TokenVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/provider/TokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenParser/BaseTokenParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenParser/TokenParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenParser/TokenParserDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenParserFactory/TokenParserFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenizer/ITokenizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenizer/Tokenizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenizer/state/InvalidState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenizer/state/TokenizerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokenizer/state/ValidState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/AndToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/AssignationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/BooleanTypeToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/BooleanValueToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/ClosingBracketToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/ClosingParenthesisToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/DivisionToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/EOFToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/IdentifierToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/IfToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/LetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/MinusToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/MultiplicationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/NumberTypeToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/NumberValueToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/OpenBracketToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/OpenParenthesisToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/OrToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/PlusToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/PrintToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/SemicolonToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/StringTypeToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/StringValueToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/TypeAssignationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/main/java/lexer/tokens/VisitableToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lexer/src/test/java/lexer/DefaultLexerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/ASTVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/ASTNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/AbstractASTNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/AdditionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/AndNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/AssigmentNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/BooleanNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/DeclarationNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/DivisionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/ExpressionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/FloatNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/IdentifierNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/IfNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/IntegerNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/MultiplicationNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/OrNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/PrintNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/ProgramNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/StringNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/nodes/SubtractionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/AbstractParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/AssignationParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/DeclarationParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/ExpressionParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/IfParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/OpenBracketParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/OpenParenthesisParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/ParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/PrintParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/ProgramParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/src/main/java/parser/states/TypeAssignationParserState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FirstTry.ps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/printScript.ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrintScript/resources/printScript.ps" beforeDir="false" afterPath="$PROJECT_DIR$/../PrintScript/resources/printScript.ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrintScript/src/ParseNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrintScript/src/ParseTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/FormSubmitButton/FormSubmitButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/FormSubmitButton/FormSubmitButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/FormSubmitButton/FormSubmitButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/FormSubmitButton/FormSubmitButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/components/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/containers/Input/Input.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/common/containers/Input/Input.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/login/components/LoginScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/login/components/LoginScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/login/containers/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/login/containers/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientDataForm/PatientDataForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientDataForm/PatientDataForm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientDataForm/PatientDataForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientDataForm/PatientDataForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientRegistrationPage/PatientRegistrationPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientRegistrationPage/PatientRegistrationPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientRegistrationPage/PatientRegistrationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/PatientRegistrationPage/PatientRegistrationPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataForm.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataInputs/TNMDataBooleanInput/TNMDataBooleanInput.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataInputs/TNMDataBooleanInput/TNMDataBooleanInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataInputs/TNMDataNumberInput/TNMDataNumberInput.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/components/TNMDataForm/TNMDataInputs/TNMDataNumberInput/TNMDataNumberInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/PatientDataForm/PatientDataForm.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/PatientDataForm/PatientDataForm.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/PatientRegistrationPage/PatientRegistrationPage.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/PatientRegistrationPage/PatientRegistrationPage.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/TNMDataForm/TNMDataForm.container.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/TNMDataForm/TNMDataInputs/TNMDataBooleanInput.container.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/containers/TNMDataForm/TNMDataInputs/TNMDataNumberInput.container.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/utils/FormValidators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/patientRegistration/utils/FormValidators.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/formReducer/formReducerActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/formReducer/formReducerActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/formReducer/formReducerState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/formReducer/formReducerState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/sistema-notificacion-controles-front/src/store.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/interpreter">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/cli">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Printscript" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JupyterTrust" id="ebf996a7-c5bb-4f4e-9c50-9e37a8db8b12" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1eEwUsTJGwhCFFiN6ev8z07KlQL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/parser/src" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="lexer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/parser/src/main/java" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/parser/src" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.PrintscriptV2 [dependencies]">
+    <configuration name="DefaultLexerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;lexer.DefaultLexerTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":lexer:cleanTest" />
+            <option value=":lexer:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DefaultLexerTest.lex" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;lexer.DefaultLexerTest.lex&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":lexer:cleanTest" />
+            <option value=":lexer:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PrintscriptV2 [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PrintscriptV2 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PrintscriptV2:cli [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/cli" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileJava" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.PrintscriptV2 [assemble]" />
+      <item itemvalue="Gradle.PrintscriptV2:cli [compileJava]" />
+      <item itemvalue="Gradle.DefaultLexerTest" />
+      <item itemvalue="Gradle.DefaultLexerTest.lex" />
+      <item itemvalue="Gradle.PrintscriptV2 [dependencies]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.PrintscriptV2 [dependencies]" />
+        <item itemvalue="Gradle.DefaultLexerTest.lex" />
+        <item itemvalue="Gradle.DefaultLexerTest" />
+        <item itemvalue="Gradle.PrintscriptV2:cli [compileJava]" />
+        <item itemvalue="Gradle.PrintscriptV2 [assemble]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ab02032-78e2-45bd-a85b-2d9933021761" name="Default Changelist" comment="" />
+      <created>1593900078348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593900078348</updated>
+      <workItem from="1593900080127" duration="1119000" />
+      <workItem from="1594040159303" duration="442000" />
+      <workItem from="1594147304590" duration="5165000" />
+      <workItem from="1594594395184" duration="1934000" />
+      <workItem from="1605840082842" duration="170000" />
+      <workItem from="1614877313206" duration="1398000" />
+      <workItem from="1616268676849" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="356" y="164" key="SettingsEditor" timestamp="1614880884261">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="356" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1614880884261" />
+    <state x="505" y="248" key="run.anything.popup" timestamp="1614880721565">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1614880721565" />
+  </component>
+</project>

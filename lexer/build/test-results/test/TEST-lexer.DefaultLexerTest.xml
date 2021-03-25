@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lexer.DefaultLexerTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-07-12T23:06:43" hostname="lgarcia-ltm1.internal.salesforce.com" time="29.285">
+  <properties/>
+  <testcase name="lex" classname="lexer.DefaultLexerTest" time="29.285">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
